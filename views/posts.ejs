@@ -1,0 +1,16 @@
+<!-- views/posts.ejs -->
+<form method="POST" action="/posts">
+  <input name="content" placeholder="What's happening?" />
+  <button>Post</button>
+</form>
+
+<ul>
+<% posts.forEach(p => { %>
+  <li>
+    <%= p.content %> — ❤️ <%= p.likes %>
+    <form method="POST" action="/posts/<%= p.id %>/like">
+      <button>Like</button>
+    </form>
+  </li>
+<% }) %>
+</ul>
