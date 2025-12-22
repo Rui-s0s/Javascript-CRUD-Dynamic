@@ -18,7 +18,4 @@ app.set("view engine", "ejs");
 app.use(authRoutes);
 app.use(postRoutes);
 
-
-console.log("anda?")
-
 app.listen(3000);

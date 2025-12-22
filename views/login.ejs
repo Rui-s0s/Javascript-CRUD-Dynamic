@@ -30,5 +30,25 @@
 Don't have an account?
 <a href="/register">Register</a>
 </p>
+<script>
+  // 1. Select the form element
+  const loginForm = document.querySelector('form');
+
+  // 2. Listen for the 'submit' event
+  loginForm.addEventListener('submit', function(event) {
+    // Stop the page from refreshing/redirecting
+    event.preventDefault();
+
+    // 3. Extract the data
+    const formData = new FormData(loginForm);
+    
+    // 4. Convert to a simple object for the console
+    const data = Object.fromEntries(formData.entries());
+
+    // 5. Visualize it!
+    console.log("Form Submitted successfully!");
+    console.table(data); 
+  });
+</script>
 </body>
 </html>
