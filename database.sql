@@ -1,3 +1,8 @@
+cd C:\Users\<user>\Apps\postgres\bin
+.\initdb.exe -D ..\data -U postgres
+.\pg_ctl.exe -D ..\data -l logfile start
+.\psql.exe -U postgres
+
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username TEXT UNIQUE NOT NULL,
