@@ -5,8 +5,8 @@ import { showPosts, addPost, like } from "../controllers/post.controller.js";
 
 const router = express.Router();
 
-router.get("/posts", requireAuth, showPosts);
-router.post("/posts", requireAuth, addPost);
-router.post("/posts/:id/like", requireAuth, like);
+router.get("/posts", showPosts);
+router.post("/posts", addPost);
+router.post("/posts/:id/like", like);
 
 export default router;

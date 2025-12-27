@@ -18,4 +18,6 @@ app.set("view engine", "ejs");
 app.use(authRoutes);
 app.use(postRoutes);
 
-app.listen(3000);
+app.listen(3000, () => {
+  "CRUD Service running on http://localhost:3000/"
+});
