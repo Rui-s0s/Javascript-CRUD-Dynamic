@@ -1,7 +1,4 @@
 // db.js
-import pkg from "pg";
-const { Pool } = pkg;
+import { Pool } from "pg";
 
-export const pool = new Pool({
-  connectionString: "postgres://postgres:addressme@localhost:5432/cruddb"
-});
+export const pool = new Pool({ connectionString: process.env.DATABASE_URL})
