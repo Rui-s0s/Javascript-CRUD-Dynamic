@@ -5,7 +5,7 @@
 </form>
 
 <ul>
-<% posts.forEach(p => { %>
+<% posts.forEach(p => { %> 
   <li>
     <%= p.content %> — ❤️ <%= p.likes %>
     <form method="POST" action="/posts/<%= p.id %>/like">

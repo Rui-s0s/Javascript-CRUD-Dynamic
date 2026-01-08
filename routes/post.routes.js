@@ -5,6 +5,7 @@ import { showPosts, addPost, like } from "../controllers/post.controller.js";
 
 const router = express.Router();
 
+// ADD MIDDLEWARE AFTER TESTING
 router.get("/posts", showPosts);
 router.post("/posts", addPost);
 router.post("/posts/:id/like", like);
