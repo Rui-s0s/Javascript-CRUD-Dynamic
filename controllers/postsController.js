@@ -13,7 +13,7 @@ export async function showPosts(req, res) {
 
 export async function createPost (req, res) {
   try {
-    const newPost = await Post.create(req.body.post)
+    const newPost = await Post.createModel(req.body.post)
     res.json(newPost)
   } catch (err) {
     console.error(err)
@@ -23,7 +23,7 @@ export async function createPost (req, res) {
 
 export async function editPost(req, res) {
   try {
-    const updated = await Post.update(req.params.id, req.body.post)
+    const updated = await Post.updateModel(req.params.id, req.body.post)
     if (!updated) return res.sendStatus(404)
     res.sendStatus(200)
   } catch (err) {
@@ -34,7 +34,7 @@ export async function editPost(req, res) {
 
 export async function deletePost(req, res) {
   try {
-    const deleted = await Post.delete(req.params.id)
+    const deleted = await Post.deleteModel(req.params.id)
     if (!deleted) return res.sendStatus(404)
     res.sendStatus(204)
   } catch (err) {
@@ -45,7 +45,7 @@ export async function deletePost(req, res) {
 
 export async function likePost(req, res) {
   try {
-    const liked = await Post.like(req.params.id)
+    const liked = await Post.likeModel(req.params.id)
     if (!liked) return res.sendStatus(404)
     res.sendStatus(200)
   } catch (err) {

@@ -1,23 +1,12 @@
-// app.js
-import express from "express";
-import session from "express-session";
-import authRoutes from "./routes/auth.routes.js";
-import postRoutes from "./routes/post.routes.js";
+import express from 'express'
+import postsRoutes from'./routes/postsRoutes'
 
-const app = express();
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.set('view engine', 'ejs')
 
-app.use(express.urlencoded({ extended: false }));
-app.use(session({
-  secret: "secret",
-  resave: false,
-  saveUninitialized: false
-}));
+// Use the routes
+app.use('/', postsRoutes)
 
-app.set("view engine", "ejs");
-
-app.use(authRoutes);
-app.use(postRoutes);
-
-app.listen(3000, () => {
-  "CRUD Service running on http://localhost:3000/"
-});
+app.listen(3000, () => console.log('Server running on http://localhost:3000'))

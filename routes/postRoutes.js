@@ -1,13 +1,15 @@
-// routes/post.routes.js
-import express from "express";
-import { requireAuth } from "../middleware/auth.middleware.js";
-import { showPosts, addPost, like } from "../controllers/post.controller.js";
+import express from 'express'
+import * as postsController from '../controllers/postsController.js'
 
-const router = express.Router();
+const router = express.Router()
 
-// ADD MIDDLEWARE AFTER TESTING
-router.get("/posts", showPosts);
-router.post("/posts", addPost);
-router.post("/posts/:id/like", like);
+// Render page
+router.get('/', postsController.showPosts)
 
-export default router;
+// API endpoints
+router.post('/posts', postsController.createPost)
+router.put('/posts/:id', postsController.editPost)
+router.delete('/posts/:id', postsController.deletePost)
+router.post('/posts/:id/like', postsController.likePost)
+
+export default router
