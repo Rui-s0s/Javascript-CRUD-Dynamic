@@ -1,5 +1,5 @@
 import express from 'express'
-import postsRoutes from'./routes/postsRoutes'
+import postsRoutes from './routes/postsRoutes.js'
 
 const app = express()
 app.use(express.json())

@@ -1,4 +1,4 @@
-import * as Post from '../models/postModel.js'
+import * as Post from '../models/postsModels.js'
 
 
 export async function showPosts(req, res) {
@@ -53,3 +53,5 @@ export async function likePost(req, res) {
     res.sendStatus(500)
   }
 }
+
+
